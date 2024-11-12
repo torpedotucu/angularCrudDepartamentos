@@ -9,13 +9,19 @@ import { provideHttpClient } from '@angular/common/http';
 import { ServiceDepartamentos } from './services/service.departamentos';
 import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/create/create.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
+import { EditarComponent } from './components/editar/editar.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    DetallesComponent,
+    EditarComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,

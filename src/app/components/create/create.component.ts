@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ServiceDepartamentos } from '../../services/service.departamentos';
 import { Departamento } from '../../models/departamento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -13,7 +14,7 @@ export class CreateComponent {
   @ViewChild("cajaNombre") cajaNombre!:ElementRef;
   @ViewChild("cajaLocalidad") cajaLocalidad!:ElementRef;
 
-  constructor(private _service:ServiceDepartamentos){}
+  constructor(private _service:ServiceDepartamentos, private _router:Router){}
 
   crearDepartamento():void{
     let idDepartamento=this.cajaId.nativeElement.value;
@@ -23,7 +24,7 @@ export class CreateComponent {
     console.log(newDepartamento);
     this._service.createDepartamentos(newDepartamento).subscribe(response=>{
       console.log(response);
-
+      this._router.navigate(["/"]);
     })
   }
 }
